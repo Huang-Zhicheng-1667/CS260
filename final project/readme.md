@@ -42,35 +42,7 @@ If the path exists, print the path and end the program.
 If the path does not exist, random obstacles are removed, the map is updated, and the path search is performed again.
 Repeat steps 4 to 6 until find the path.
 
-Sample Results:
-Map 1:
-. . . . . . . . . X . . . . . X . X . .     
-X . . X X . . X . X . . . . . . X . . .     
-X X . . . . . X . . . . . . . . X X . X     
-. X . . . . . . . . . . X X . . . X X .     
-X . . . . . X . . . . . . . . . . . . X     
-X X . . X X X . . X . . . X . . . X X X     
-. . X . X . . X .
-X . . . X . . X . . . . . X . . . . . X
-. . . . . . . . . . . . . X . . X . . .
-. . . . . . . . . X . . X . . X . . . .
-. X . . . X . . . . . . . . . . . . . .
-. X X . . . . . . . X . . . X . . . . .
-X . . . . . . X . . . . X . X . . X . X
-. X X . . . . . . . X . X . X . . . . .
-. . . . . . . . . . . . . X . . . . X X
-X X . . . . . . . . . . . . X . . X . .
-. X X . . . X . X X . . . X . . . X . .
-. X . . X . X . . . . . . . X . . . X X
-. . . . . X . . . X . . . X X X . . . .
-. X . . X X . . X . . . X . . . . X . X
-. . . X . X . . . . . . . . . . . . . .
-. X . . . X . . . . . . . . . . . X X .
-. . . . X . . . . . . X . X . X . . X .
-. . X X . X . . . X . . . X . . . . X .
-X X . . . . . . X X . . . . . . . . X .
-
-Map 2:
+Sample Result:
 . X . . . . . . . . X . . . . X . . X . 
 . . . . X . . . . X . X . . . . X . . . 
 . . X . . . X X . . . X . . . . . . X . 
