@@ -159,7 +159,62 @@ void removeObstacle(char map[][SIZE]) {
     map[x][y] = '.';
 }
 
+/*
+// Function to perform tests
+void runTests() {
+    char testMap[SIZE][SIZE];
+
+    // Test Map Initialization
+    for (int i = 0; i < SIZE; ++i) {
+        for (int j = 0; j < SIZE; ++j) {
+            assert(testMap[i][j] == '.');
+        }
+    }
+    printf("Map Initialization Test Passed\n");
+
+    // Test Obstacle Generation
+    generateObstacles(testMap);
+    int obstacleCount = 0;
+    for (int i = 0; i < SIZE; ++i) {
+        for (int j = 0; j < SIZE; ++j) {
+            if (testMap[i][j] == '#')
+                obstacleCount++;
+        }
+    }
+    assert(obstacleCount > 0); // Obstacles should be generated
+    printf("Obstacle Generation Test Passed\n");
+
+    // Test MST Generation
+    struct Graph* testGraph = createGraph(SIZE * SIZE, SIZE * SIZE * 2);
+    struct Graph* testMST = generateMST(testGraph);
+    assert(testMST->E == SIZE * SIZE - 1); // MST edges should be V - 1
+    for (int i = 0; i < testMST->E; ++i) {
+        int src_x = testMST->edges[i].src / SIZE;
+        int src_y = testMST->edges[i].src % SIZE;
+        int dest_x = testMST->edges[i].dest / SIZE;
+        int dest_y = testMST->edges[i].dest % SIZE;
+        assert(src_x >= 0 && src_x < SIZE && src_y >= 0 && src_y < SIZE);
+        assert(dest_x >= 0 && dest_x < SIZE && dest_y >= 0 && dest_y < SIZE);
+    }
+    printf("MST Generation Test Passed\n");
+
+    // Test Path Existence Check
+    assert(isPathExists(testMST, testMap)); // A path should exist in the MST
+    printf("Path Existence Check Test Passed\n");
+
+    // Test Obstacle Removal
+    removeObstacle(testMap);
+    bool isConnected = isPathExists(testMST, testMap);
+    assert(isConnected); // Removing an obstacle should not disconnect the graph
+    printf("Obstacle Removal Test Passed\n");
+
+    free(testGraph->edges);
+    free(testGraph);
+    free(testMST);
+}*/
+
 int main() {
+    // runTests();
     char map[SIZE][SIZE];
 
     // Initialize map
@@ -188,8 +243,7 @@ int main() {
                     edge_index++;
                 }
                 if (j < SIZE - 1) {
-                    graph->edges[edge_index].src =
-                    i * SIZE + j;
+                    graph->edges[edge_index].src =                    i * SIZE + j;
                     graph->edges[edge_index].dest = i * SIZE + (j + 1);
                     edge_index++;
                 }
